@@ -1,7 +1,8 @@
 const nappi = document.getElementById("nappi");
-nappi.addEventListener("click", find);
+const address1 = document.getElementById("lahto");
+const address2 = document.getElementById("saapuminen");
+nappi.addEventListener("click", changeAddress);
 
-function  find() {
-    //hakee rajapinnasta lähdöllä ja saapumisoaikalla reitin
-    //laskee taksien hinnat, tulostaa ne sivulle numeron kera.
+function  changeAddress() {
+
 }
