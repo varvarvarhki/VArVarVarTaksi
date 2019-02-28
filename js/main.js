@@ -43,6 +43,9 @@ function  changeAddress() {
 }
 
 function search() {
+    if (coordinates = 24.99935, 20.20787 || 25.012523, 60.09489 || 24.65104, 60.20956 || 24.716896, 60.135897)
+        confirm("Paikkaa ei ole");
+    else {
     let searchaddress =  "https://api.openrouteservice.org/directions?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&coordinates=";
     let searchaddress2 = "&profile=driving-car&format=geojson";
 
@@ -91,4 +94,5 @@ function useData(geojson) {
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoidmFydmFydmFyaGtpIiwiYSI6ImNqc29meHo3aDBrY2EzeWp2NnNsdTNlejIifQ.Lr5nSKYjznoAIrtfgg6jpQ'
     }).addTo(map);
+}
 }
