@@ -1,4 +1,4 @@
-const nappi = document.getElementById("nappi");
+const nappi = document.getElementById("nappi")
 nappi.addEventListener("click", changeAddress);
 let coordinates = [];
 
@@ -38,54 +38,57 @@ function  changeAddress() {
     });
 
     Promise.all([fetch1, fetch2]).then(function() {
-        search();
+            search();
     });
 }
 
 function search() {
-    if (coordinates = 24.99935, 60.20787 || 25.012523, 60.09489 || 24.65104, 60.20956 || 24.716896, 60.135897) {
-        confirm("Paikkaa ei ole.");
-    } else {
-        let searchaddress = "https://api.openrouteservice.org/directions?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&coordinates=";
-        let searchaddress2 = "&profile=driving-car&format=geojson";
+    let searchaddress =  "https://api.openrouteservice.org/directions?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&coordinates=";
+    let searchaddress2 = "&profile=driving-car&format=geojson";
 
-        let cs = coordinates[0] + "|" + coordinates[1];
-        searchaddress += cs;
-        searchaddress += searchaddress2;
-        let stat;
-        fetch(searchaddress).then(function (vastaus) {
-            stat = vastaus.status;
-            if (stat === 404) {
-                let parent = document.getElementsByTagName("main")[0];
-                let child = document.createElement("p");
-                child.textContent = "Haulla ei löydy tietoja";
-                parent.appendChild(child);
-            } else {
-                return vastaus.json()
+    let cs = coordinates[0] + "|" + coordinates[1];
+    searchaddress += cs;
+    searchaddress += searchaddress2;
+    let stat;
+    fetch(searchaddress).then(function(vastaus) {
+        stat = vastaus.status;
+        if(stat ===404) {
+            let parent = document.getElementsByTagName("main")[0];
+            let child = document.createElement("p");
+            child.textContent =  "Haulla ei löydy tietoja";
+            parent.appendChild(child);
+        } else {
+            return vastaus.json()
 
-            }
+        }
 
-        }).then(function (geojson) {
-            if (stat !== 404) {
-                useData(geojson);
-            }
-        }).catch(function (error) {
-            console.log(error);
-        });
-    }
+    }).then(function(geojson) {
+        if(stat!==404) {
+            useData(geojson);
+        }
+    }).catch(function(error) {
+        console.log(error);
+    });
+}
+function useData(geojson) {
+    console.log(geojson);
+    let i = coordinates[0].indexOf(",");
+    let cord1 = coordinates[0].substring(0,i);
+    let cord2 = coordinates[0].substring(i +1, coordinates[0].length);
+    let c1= parseFloat(cord1);
+    let c2 = parseFloat(cord2);
 
-    function useData(geojson) {
-        console.log(geojson);
-        let i = coordinates[0].indexOf(",");
-        let cord1 = coordinates[0].substring(0, i);
-        let cord2 = coordinates[0].substring(i + 1, coordinates[0].length);
-        let map = L.map('map', {
-            center: [cord1, cord2],
-            zoom: 5
-        });
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-    }
+    mapboxgl.accessToken = 'pk.eyJ1IjoidmFydmFydmFyaGtpIiwiYSI6ImNqc29meHo3aDBrY2EzeWp2NnNsdTNlejIifQ.Lr5nSKYjznoAIrtfgg6jpQ';
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [c1,c2],
+        zoom: 
+    });
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoidmFydmFydmFyaGtpIiwiYSI6ImNqc29meHo3aDBrY2EzeWp2NnNsdTNlejIifQ.Lr5nSKYjznoAIrtfgg6jpQ'
+    }).addTo(map);
 }
