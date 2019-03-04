@@ -225,19 +225,17 @@ function useData(geojson) {
 
 }
 function calculateDistance() {
-    let sadd = "https://api.openrouteservice.org/matrix?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&profile=driving-car&locations=9.970093,48.477473%7C9.207916,49.153868%7C37.573242,55.801281%7C115.663757,38.106467&metrics=duration"""
+    let sadd = "https://api.openrouteservice.org/matrix?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&profile=driving-car&locations=9.970093,48.477473%7C9.207916,49.153868%7C37.573242,55.801281%7C115.663757,38.106467&metrics=duration";
 }
 function calculateTime() {
-    let sadd = "https://api.openrouteservice.org/matrix?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&profile=driving-car&locations=" + linestring[0];
+    let sadd = "https://api.openrouteservice.org/matrix?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&profile=driving-car&locations=";
     let sadd2 = "&metrics=duration";
-    let cords;
-    for (let i = 1; i < linestring.length; i++) {
-        sadd += "%7C" + linestring[i];
-    }
-    sadd += sadd2;
+    sadd += coordinates[0] +"%7C" + coordinates[1] + sadd2;
     fetch(sadd).then(function(answer) {
         return answer.json();
     }).then(function (json) {
-        //
-    }
+        console.log(json);
+    }).catch(function (error) {
+        console.log(error);
+    });
 }
