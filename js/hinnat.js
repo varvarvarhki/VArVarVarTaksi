@@ -14,10 +14,10 @@ function taksiHelsinkiHinta(matka,aika){
     const day = new Date();
     console.log(day.getHours());
     console.log(day.getDay());
-    if((0<day.getDay()&&(day.getDay()<6))&&(8<day.getHours()&&day.getHours()<15)){
+    if(day.getDay()<6&&(8<day.getHours()&&day.getHours()<15)){
         hinta += (matka*0.99+0.79*aika);
 
-    } else if ((day.getDay()===5&&day.getHours()===23)||(day.getDay()===6&&(0<day.getHours()&&day.getHours()<7)||(day.getDay()===6&&day.getHours()===23))||(day.getDay()===1&&(0<day.getHours()&&day.getHours()<7))){
+    } else if ((day.getDay()===5&&day.getHours()===23)||(day.getDay()===6&&day.getHours()<7)||(day.getDay()===6&&day.getHours()===23)||(day.getDay()===1&&day.getHours()<7)||day.getDay()===7){
         hinta += (matka*1.19+aika*0.99);
     } else{
         hinta += (matka*1.09+0.89*aika);
@@ -51,10 +51,10 @@ function kovanenHinta(matka,aika){
     const day = new Date();
     console.log(day.getHours());
     console.log(day.getDay());
-    if((0<day.getDay()&&(day.getDay()<6))&&(8<day.getHours()&&day.getHours()<15)){
+    if(day.getDay()<6&&(8<day.getHours()&&day.getHours()<15)){
         hinta += (matka*0.99+0.79*aika);
 
-    } else if ((day.getDay()===5&&day.getHours()===23)||(day.getDay()===6&&(0<day.getHours()&&day.getHours()<7)||day.getHours()===23)||(day.getDay()===1&&(0<day.getHours()&&day.getHours()<7))){
+    } else if ((day.getDay()===5&&day.getHours()===23)||(day.getDay()===6&&day.getHours()<7)||(day.getDay()===6&&day.getHours()===23)||(day.getDay()===1&&day.getHours()<7)||day.getDay()===7){
         hinta += (matka*1.19+aika*0.99);
     } else{
         hinta += (matka*1.09+0.89*aika);
@@ -81,7 +81,7 @@ function fixutaxiHinta(matka,aika){
 }
 function retroTaksi(matka){
     const day = new Date();
-    if((0<day.getDay()&&day.getDay()<6)&&(5<day.getHours()&&day.getHours()<20)||(day.getDay()===6&&(5<day.getHours()&&day.getHours()<16))){
+    if(day.getDay()<6&&(5<day.getHours()&&day.getHours()<20)||(day.getDay()===6&&(5<day.getHours()&&day.getHours()<16))){
         hinta = 4.70+matka*1.58;
     } else {
         hinta = 7.20+matka*1.58;
