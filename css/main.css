@@ -97,8 +97,44 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+header{
+    text-align: center;
+    background-color: lightgreen;
+    border-bottom: 0.2em green solid;
 
+}
+h1{
+    margin: 0;
+   padding: 1em;
+    vertical-align: center;
+}
+input{
+    display: inline-block;
+    width: 15em;
+    margin: 1em;
 
+}
+#haku{
+    width: 100%;
+    text-align: center;
+
+}
+button{
+    display: block;
+    margin: auto;
+    width: 8em;
+    height: 2em;
+    background-color: green;
+    border: 0;
+}
+button:hover{
+    background-color: lightgreen;
+}
+#map{
+    display: block;
+    height: 30em;
+    width: 80%;
+}
 
 
 
@@ -205,6 +241,7 @@ textarea {
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
+
 }
 
 @media print,
