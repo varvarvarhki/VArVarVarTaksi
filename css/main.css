@@ -133,11 +133,15 @@ button:hover{
 #map{
     margin: auto;
     display: block;
-    height: 30em;
-    width: 80%;
+    height: 60em;
+    width: 60em;
 }
-
-
+#lahtoerror {
+    text-align: center;
+}
+#saapuminenerror {
+    text-align: center;
+}
 
 
 
