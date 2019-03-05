@@ -23,7 +23,7 @@ function  changeAddress() {
         for(let i = 0; i < document.getElementById("lahtoerror").childNodes.length; i ++) {
             document.getElementById("lahtoerror").removeChild(document.getElementById("lahtoerror").lastChild);
         }
-        if(json['features'].length===0) {
+        if(json['features'].length===0|| json['features'].length>1) {
             if(coordinates[0]!==undefined) {
                 coordinates[0] = null;
             }
@@ -51,7 +51,7 @@ function  changeAddress() {
         for(let i = 0; i < document.getElementById("saapuminenerror").childNodes.length; i ++) {
             document.getElementById("saapuminenerror").removeChild(document.getElementById("saapuminenerror").lastChild);
         }
-        if(json['features'].length===0)  {
+        if(json['features'].length===0 || json['features'].length>1)  {
             if(coordinates[1]!==undefined) {
                 coordinates[1] = null;
             }
