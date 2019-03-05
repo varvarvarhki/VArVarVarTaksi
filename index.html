@@ -1,42 +1,48 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
-        <!-- Place favicon.ico in the root directory -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taksihinnat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-        <
-    <header><h1>Vertaa taksit Pääkaupunkiseutu</h1></header>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
 
-        <main>
-            <section>
-                <input id="lahto" type="text"> <br>
-                <input id="saapuminen" type="text"><br>
-                <button id="nappi">Hae</button><br>
-            </section>
-        </main>
-        <footer></footer>
-        <!-- Add your site or application content here -->
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css" rel="stylesheet" />
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 
-    </body>
+
+</head>
+<body>
+<header><h1>Vertaa taksit Pääkaupunkiseutu</h1> <br>
+    <figure> </figure>
+</header>
+
+<main>
+    <section id = "haku">
+        <input id="lahto" type="text"> <br>
+        <input id="saapuminen" type="text"><br>
+        <button id="nappi">Hae</button><br>
+    </section>
+    <section>
+        <div id="map">></div>
+
+    </section>
+</main>
+<footer></footer>
+<!-- Add your site or application content here -->
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+
+
+</body>
 </html>
