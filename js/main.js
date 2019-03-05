@@ -115,15 +115,13 @@ function useData(geojson) {
     let c3 = parseFloat(cord3);
     let c4 = parseFloat(cord4);
 
-    JavaScript.load("https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js", function() {
         mapboxgl.accessToken = 'pk.eyJ1IjoidmFydmFydmFyaGtpIiwiYSI6ImNqc29meHo3aDBrY2EzeWp2NnNsdTNlejIifQ.Lr5nSKYjznoAIrtfgg6jpQ';
-        var map = new mapboxgl.Map({
+        let map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9'
-            center: [c2, c2],
+            style: 'mapbox://styles/mapbox/streets-v9',
+            center: [c1, c2],
             zoom: 15
         });
-    });
 
     for (let i = 0; i <
     geojson['features'][0]['geometry']['coordinates'].length; i++) {

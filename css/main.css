@@ -105,7 +105,7 @@ header{
 }
 h1{
     margin: 0;
-   padding: 1em;
+    padding: 1em;
     vertical-align: center;
 }
 input{
@@ -131,6 +131,7 @@ button:hover{
     background-color: lightgreen;
 }
 #map{
+    margin: auto;
     display: block;
     height: 30em;
     width: 80%;
