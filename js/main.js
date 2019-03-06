@@ -12,6 +12,7 @@ const kovanen  = document.getElementById('kovanenHinta');
 const fixutaxi = document.getElementById('fixutaxiHinta');
 const retrotaksi = document.getElementById('retrotaksiHinta');
 const hinnasto = document.getElementById('hinnasto');
+const info = document.getElementById("info");
 
 function  changeAddress() {
     hinnasto.style = 'display: table';
@@ -43,6 +44,7 @@ function  changeAddress() {
             document.getElementById("lahtoerror").appendChild(p);
             document.getElementById("map").style.display="none";
             hinnasto.style= "display:none";
+            info.style="display:none";
             throw new Error("Lähtöosoitetta ei löynyt.");
         } else {
             coordinates[0] = "" + json['bbox'][0] + "," + json['bbox'][1];
@@ -69,6 +71,8 @@ function  changeAddress() {
             document.getElementById("saapuminenerror").appendChild(p);
             document.getElementById("map").style.display="none";
             hinnasto.style="dispaly:none";
+            info.style ="display:none";
+            info.innerText ="";
             throw new Error("Saapumissositetta ei löytynyt");
 
         } else {
@@ -270,9 +274,11 @@ function calculateTime() {
 }
 window.setInterval(laske, 1000);
 
-window.setInterval(getDuration, 1000);
+
 
 function laske(){
+    info.textContent ="Matka: " + getDistance().toFixed(0) + "km" +
+        " Aika: " + getDuration().toFixed(0) + "min";
     meneva.textContent = menevaHinta(getDistance(),getDuration()).toFixed(2)+'e';
     taksiHelsinki.textContent = taksiHelsinkiHinta(getDistance(),getDuration()).toFixed(2)+'e';
     kajon.textContent = kajonHinta(getDistance(),getDuration()).toFixed(2)+'e';
