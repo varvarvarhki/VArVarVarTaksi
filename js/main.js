@@ -246,7 +246,7 @@ function calculateDistance() {
     }).then(function(json) {
         console.log(json);
         console.log(json['distances'][0][1]);
-        return json['distances'][0][1];
+        distance(json['distances'][0][1]);
     }).catch(function (error) {
         console.log(error);
     });
@@ -260,8 +260,14 @@ function calculateTime() {
     }).then(function (json) {
         console.log(json);
         console.log(json['durations'][0][1]);
-        return (json['durations'][0][1]/60);
+        duration(json['durations'][0][1]/60);
     }).catch(function (error) {
         console.log(error);
     });
+}
+function duration(d) {
+    return d;
+}
+function distance (d) {
+    return d
 }
