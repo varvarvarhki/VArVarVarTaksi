@@ -2,6 +2,8 @@ const nappi = document.getElementById("nappi")
 nappi.addEventListener("click", changeAddress);
 let coordinates = [];
 let linestring = [];
+let distance;
+let duration;
 
 function  changeAddress() {
     let searchadd = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&text=";
@@ -244,9 +246,8 @@ function calculateDistance() {
     fetch(sadd).then(function(answer) {
         return answer.json();
     }).then(function(json) {
-        console.log(json);
-        console.log(json['distances'][0][1]);
-        distance(json['distances'][0][1]);
+       distance = json['distances'][0][1];
+       console.log(distance);
     }).catch(function (error) {
         console.log(error);
     });
@@ -259,15 +260,25 @@ function calculateTime() {
         return answer.json();
     }).then(function (json) {
         console.log(json);
-        console.log(json['durations'][0][1]);
-        duration(json['durations'][0][1]/60);
+        duration = (json['durations'][0][1]/60);
+        console.log(duration);
     }).catch(function (error) {
         console.log(error);
     });
 }
-function duration(d) {
-    return d;
+window.setInterval(getDistance, 5000);
+window.setInterval(getDuration, 5000);
+function getDistance() {
+    console.log(distance);
+    return distance;
 }
-function distance (d) {
-    return d
+function getDuration() {
+    console.log(duration);
+    return duration;
 }
+
+
+
+
+
+
