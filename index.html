@@ -21,22 +21,75 @@
 
 </head>
 <body>
-<header><h1>Vertaa taksit Pääkaupunkiseutu</h1> <br>
-    <figure> </figure>
+<header><h1>Vertaa taksit Pääkaupunkiseutu</h1>
+
 </header>
 
 <main>
+
     <section id = "haku">
-        <input id="lahto" type="text"> <br>
-        <input id="saapuminen" type="text"> <br>
-        <button id="nappi">Hae</button><br>
+        <input id="lahto" type="text">
+        <input id="saapuminen" type="text">
+        <button id="nappi">Hae</button>
     </section>
     <section>
         <div id = "lahtoerror"></div>
         <div id = "saapuminenerror"></div>
-        <div id="map">></div>
-        <div id = "hinnat"></div>
+        <div id="map"></div>
+        <div id = "hinnat">
+            <table id="hinnasto">
+                <thead>
+                <tr>
+                    <th colspan="3"><h2>Hinnasto</h2>
+                    </th>
+                </tr>
+                </thead>
+                <tr>
+                    <td>yritys</td>
+                    <td>hintaarvio</td>
+                    <td>puhelin</td>
+                </tr>
+                <tr>
+                    <td>menevä</td>
+                    <td id="menevaHinta"></td>
+                    <td>0800 02120</td>
+                </tr>
+                <tr>
+                    <td>TaksiHelsinki</td>
+                    <td id="taksihelsinkiHinta"></td>
+                    <td>0100 0700</td>
+                </tr>
+                <tr>
+                    <td>Kajon</td>
+                    <td id="kajonHinta"></td>
+                    <td>0100 7070</td>
+                </tr>
+                <tr>
+                    <td>Lähitaksi</td>
+                    <td id="lahitaksiHinta"></td>
+                    <td>0100 7300</td>
+                </tr>
+                <tr>
+                    <td>Kovanen</td>
+                    <td id="kovanenHinta"></td>
+                    <td>0200 6060</td>
+                </tr>
+                <tr>
+                    <td>Fixutaksi</td>
+                    <td id="fixutaxiHinta"></td>
+                    <td>0100 6060</td>
+                </tr>
+                <tr>
+                    <td>Retrotaksi</td>
+                    <td id="retrotaksiHinta"></td>
+                    <td>0200 66666</td>
+                </tr>
+
+
+            </table>
+        </div>
     </section>
+
 </main>
 <footer></footer>
 <!-- Add your site or application content here -->

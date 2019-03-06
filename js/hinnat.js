@@ -7,8 +7,7 @@ function menevaHinta(matka,aika){
         return hinta;
     }
 }
-console.log(menevaHinta(2,2));
-console.log(menevaHinta(10,15));
+
 function taksiHelsinkiHinta(matka,aika){
     let hinta = 3.90;
     const day = new Date();
@@ -29,13 +28,12 @@ function taksiHelsinkiHinta(matka,aika){
     }
 
 }
-console.log(taksiHelsinkiHinta(2,2));
-console.log(taksiHelsinkiHinta(10,12));
+
 
 function kajonHinta(matka,aika){
     return 5.90 + matka * 0.89 + aika * 0.89;
 }
-console.log('kajon '+kajonHinta(5,5));
+
 function lahitaksiHinta(matka,aika){
     const day = new Date;
     let hinta =0;

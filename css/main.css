@@ -126,15 +126,17 @@ button{
     height: 2em;
     background-color: green;
     border: 0;
+
 }
 button:hover{
     background-color: lightgreen;
 }
 #map{
-    margin: auto;
+
+    margin: 1em calc(50% - 15em ) 1em calc(50% - 15em );
     display: block;
-    height: 60em;
-    width: 60em;
+    height: 30em;
+    width: 30em;
 }
 #lahtoerror {
     text-align: center;
@@ -142,7 +144,24 @@ button:hover{
 #saapuminenerror {
     text-align: center;
 }
+#hinnasto{
+    border-spacing: 0;
+    width: 30em;
+    margin: 0 calc(50% - 15em) 1em calc(50% - 15em);
+    display: none;
 
+}
+td {
+    border-bottom: 1px solid #333;
+    padding: 1em;
+    text-align: center;
+}
+
+thead {
+    height: 100%;
+    background-color: green;
+    color: white;
+}
 
 
 
