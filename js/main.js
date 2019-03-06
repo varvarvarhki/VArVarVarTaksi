@@ -29,8 +29,6 @@ function  changeAddress() {
         return vastaus.json();
 
     }).then(function(json) {
-        console.log("lähtöpiste");
-        console.log(json);
         for(let i = 0; i < document.getElementById("lahtoerror").childNodes.length; i ++) {
             document.getElementById("lahtoerror").removeChild(document.getElementById("lahtoerror").lastChild);
         }
@@ -57,9 +55,6 @@ function  changeAddress() {
         return vastaus.json();
 
     }).then(function(json) {
-        console.log("saapumis");
-        console.log(json);
-        console.log(json['features'].length===0);
         for(let i = 0; i < document.getElementById("saapuminenerror").childNodes.length; i ++) {
             document.getElementById("saapuminenerror").removeChild(document.getElementById("saapuminenerror").lastChild);
         }
@@ -128,7 +123,6 @@ function search() {
     }
 
     function useData(geojson) {
-        console.log(geojson);
         let i = coordinates[0].indexOf(",");
         let cord1 = coordinates[0].substring(0, i);
         let cord2 = coordinates[0].substring(i + 1, coordinates[0].length);
@@ -258,7 +252,6 @@ function calculateDistance() {
         return answer.json();
     }).then(function(json) {
        distance = json['distances'][0][1];
-       console.log(distance);
     }).catch(function (error) {
         console.log(error);
     });
@@ -270,9 +263,7 @@ function calculateTime() {
     fetch(sadd).then(function(answer) {
         return answer.json();
     }).then(function (json) {
-        console.log(json);
         duration = (json['durations'][0][1]/60);
-        console.log(duration);
     }).catch(function (error) {
         console.log(error);
     });
@@ -292,12 +283,10 @@ function laske(){
 }
 
 function getDistance() {
-    console.log(distance);
     return distance;
 }
 
 function getDuration() {
-    console.log(duration);
     return duration;
 }
 
@@ -314,8 +303,6 @@ function menevaHinta(matka,aika){
 function taksiHelsinkiHinta(matka,aika){
     let hinta = 3.90;
     const day = new Date();
-    console.log(day.getHours());
-    console.log(day.getDay());
     if(day.getDay()<6&&(8<day.getHours()&&day.getHours()<15)){
         hinta += (matka*0.99+0.79*aika);
 
@@ -349,8 +336,6 @@ function lahitaksiHinta(matka,aika){
 function kovanenHinta(matka,aika){
     let hinta = 3.90;
     const day = new Date();
-    console.log(day.getHours());
-    console.log(day.getDay());
     if(day.getDay()<6&&(8<day.getHours()&&day.getHours()<15)){
         hinta += (matka*0.99+0.79*aika);
 
