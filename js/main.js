@@ -44,6 +44,7 @@ function  changeAddress() {
             p.innerText= "Lähtöosoitetta ei löytynyt";
             document.getElementById("lahtoerror").appendChild(p);
             document.getElementById("map").style.display="none";
+            hinnasto.style= "display:none";
             throw new Error("Lähtöosoitetta ei löynyt.");
         } else {
             coordinates[0] = "" + json['bbox'][0] + "," + json['bbox'][1];
@@ -72,6 +73,7 @@ function  changeAddress() {
             p.innerText= "Saapumisosoitetta ei löytynyt";
             document.getElementById("saapuminenerror").appendChild(p);
             document.getElementById("map").style.display="none";
+            hinnasto.style="dispaly:none";
             throw new Error("Saapumissositetta ei löytynyt");
 
         } else {
