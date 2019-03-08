@@ -15,7 +15,7 @@ const hinnasto = document.getElementById('hinnasto');
 const info = document.getElementById("info");
 
 function  changeAddress() {
-    hinnasto.style = 'display: table';
+
     let searchadd = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&text=";
     let searchadd2 = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&text=";
     let address1 = document.getElementById("lahto").value;
@@ -83,6 +83,7 @@ function  changeAddress() {
 
     Promise.all([fetch1, fetch2]).then(function() {
         document.getElementById("map").style.display="block";
+        hinnasto.style.display ='table';
         search();
     }).catch(function(error) {
         console.log(error);
