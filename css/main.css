@@ -96,6 +96,7 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
 header{
     width: 100%;
     text-align: center;
@@ -109,6 +110,7 @@ h1{
     vertical-align: center;
     font-size: 4em;
 }
+
 input{
     font-size: 2em;
     width: 18em;
@@ -132,9 +134,14 @@ input:focus{
     text-align: center;
 
 }
+
 button{
     font-size: 2em;
     display: block;
+    margin: 1em calc(50% - 4em) 1em calc(50% - 4em);
+    border-radius: 2px;
+    width: 8em;
+    height: 2em;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 1em;
@@ -150,10 +157,15 @@ button:focus{
     outline: black;
     border-radius: 1em;
 }
-button:hover{
+#nappi:hover{
     background-color: lightgreen;
 }
 #map{
+    width: 30em;
+    margin: auto;
+    display: block;
+    height: 30em;
+
     display: inline-block;
     margin-right: 10%;
    /* margin: 1em calc(50% - 15em ) 1em calc(50% - 15em );'*/
@@ -295,67 +307,8 @@ thead {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (max-width:  60em) {
-    body {
-        margin: 0;
-    }
-    header {
-        font-size: 0.5em;
-        width: 100%;
-        margin: auto;
-    }
-    main {
-        margin-left: auto;
-        margin-right: auto;
-        min-height:13em;
-        width: 100%;
-        font-size: 1em;
-        min-height: 35em;
-    }
-    footer {
-        width: 100%;
-        font-size: 0.5em;'
-    }
-    div{
-        margin: auto;
-    }
-
-    #map{
-        display: block;
-        margin-left:  0;
-        padding: 1em;
-        width: 20em;
-        height: 35em;
-    }
-    #hinnasto{
-        width: 18em;
-        height: 35em;
-        display: none;
-        margin:0;
-    }
-    #hinnat {
-        margin-left: 0;
-    }
-    input {
-        width: 15em;
-        height: 3em;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        font-size: 1em;
-
-    }
-    button{
-        font-size: 1em;
-        background-color: green;
-        border-radius:1em ;
-        height: 3em;
-        width: px;
-
-    }
-
-
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
 
 }
 

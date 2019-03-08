@@ -18,8 +18,8 @@ function  changeAddress() {
 
     let searchadd = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&text=";
     let searchadd2 = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&text=";
-    let address1 = document.getElementById("lahto").value;
-    let address2 = document.getElementById("saapuminen").value;
+    let address1 = document.getElementById("lahtoinput").value;
+    let address2 = document.getElementById("saapumineninput").value;
     address1 = address1.replace(/\s/g, "%20");
     address2 = address2.replace(/\s/g, "%20");
     searchadd += address1 + "&boundary.country=FI";
@@ -38,7 +38,7 @@ function  changeAddress() {
                 coordinates[0] = null;
             }
             linestring  = []
-            document.getElementById("lahto").value = null;
+            document.getElementById("lahtoinput").value = null;
             let p = document.createElement("p");
             p.innerText= "Lähtöosoitetta ei löytynyt";
             document.getElementById("lahtoerror").appendChild(p);
@@ -296,6 +296,9 @@ function getDistance() {
 function getDuration() {
     return duration;
 }
+const day = new Date();
+const paiva = day.getDay();
+const tunti = day.getHours();
 
 function menevaHinta(matka,aika){
     let hinta = 3.00;
@@ -310,7 +313,7 @@ function menevaHinta(matka,aika){
 function taksiHelsinkiHinta(matka,aika){
     let hinta = 3.90;
     const day = new Date();
-    if(day.getDay()<6&&(8<day.getHours()&&day.getHours()<15)){
+    if(paiva<6&&(8<tunti&&day.getHours()<15)){
         hinta += (matka*0.99+0.79*aika);
 
     } else if ((day.getDay()===5&&day.getHours()===23)||(day.getDay()===6&&day.getHours()<7)||(day.getDay()===6&&day.getHours()===23)||(day.getDay()===1&&day.getHours()<7)||day.getDay()===7){
@@ -331,7 +334,7 @@ function kajonHinta(matka,aika){
 }
 
 function lahitaksiHinta(matka,aika){
-    const day = new Date;
+    const day = new Date();
     let hinta =0;
     if((1<day.getDay()&&day.getDay()<7)&&(5<day.getHours()&&day.getHours()<19)){
         hinta = 3.90+(matka*1+aika*0.75);
@@ -342,15 +345,15 @@ function lahitaksiHinta(matka,aika){
 }
 function kovanenHinta(matka,aika){
     let hinta = 3.90;
-    const day = new Date();
+
     if(day.getDay()<6&&(8<day.getHours()&&day.getHours()<15)){
         hinta += (matka*0.99+0.79*aika);
-
-    } else if ((day.getDay()===5&&day.getHours()===23)||(day.getDay()===6&&day.getHours()<7)||(day.getDay()===6&&day.getHours()===23)||(day.getDay()===1&&day.getHours()<7)||day.getDay()===7){
+    } else if ((paiva===5&&tunti===23)||(paiva===6&&tunti<7)||(paiva===6&&tunti===23)||(paiva===1&&tunti<7)||paiva===7){
         hinta += (matka*1.19+aika*0.99);
     } else{
         hinta += (matka*1.09+0.89*aika);
     }
+
     if(hinta<7){
         return 7;
     } else {
@@ -359,6 +362,7 @@ function kovanenHinta(matka,aika){
 }
 function fixutaxiHinta(matka,aika){
     const day = new Date();
+    let hinta =0;
     if (5<day.getHours()&&day.getHours()<18){
         hinta = matka*0.99+aika*0.9;
     } else{
@@ -372,6 +376,7 @@ function fixutaxiHinta(matka,aika){
 }
 function retroTaksiHinta(matka){
     const day = new Date();
+    let hinta = 0;
     if(day.getDay()<6&&(5<day.getHours()&&day.getHours()<20)||(day.getDay()===6&&(5<day.getHours()&&day.getHours()<16))){
         hinta = 4.70+matka*1.58;
     } else {
@@ -379,7 +384,24 @@ function retroTaksiHinta(matka){
     }
     return hinta;
 }
-
+(function() {
+    var placesAutocomplete = places({
+        appId: 'plG4UGHQVISH',
+        apiKey: '0b96a80abd2ecc48f79aa96c67f521b9',
+        container: document.querySelector('#lahto input'),
+        style: false,
+        debug: true
+    });
+})();
+(function() {
+    var placesAutocomplete = places({
+        appId: 'plG4UGHQVISH',
+        apiKey: '0b96a80abd2ecc48f79aa96c67f521b9',
+        container: document.querySelector('#saapuminen input'),
+        style: false,
+        debug: true
+    });
+})();
 
 
 

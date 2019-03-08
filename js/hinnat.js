@@ -66,6 +66,7 @@ function kovanenHinta(matka,aika){
 }
 function fixutaxiHinta(matka,aika){
     const day = new Date();
+    let hinta = 0;
     if (5<day.getHours()&&day.getHours()<18){
         hinta = matka*0.99+aika*0.9;
     } else{
@@ -79,9 +80,11 @@ function fixutaxiHinta(matka,aika){
 }
 function retroTaksi(matka){
     const day = new Date();
+    let hinta = 0;
     if(day.getDay()<6&&(5<day.getHours()&&day.getHours()<20)||(day.getDay()===6&&(5<day.getHours()&&day.getHours()<16))){
         hinta = 4.70+matka*1.58;
     } else {
         hinta = 7.20+matka*1.58;
     }
+    return hinta;
 }

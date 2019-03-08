@@ -28,14 +28,21 @@
 <main>
 
     <section id = "haku">
-        <input id="lahto" type="text">
-        <input id="saapuminen" type="text">
+        <div id="lahto"><input type="search" id="lahtoinput" placeholder="mistä?"></div>
+        <div id="saapuminen"><input type="search" id="saapumineninput"  placeholder="mihin?"></div>
+
+        <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
+        <script>
+
+        </script>
+
         <button id="nappi">Hae</button>
     </section>
     <section>
         <div id = "lahtoerror"></div>
         <div id = "saapuminenerror"></div>
         <div id="info"></div>
+
         <div id = "hinnat">
             <table id="hinnasto">
                 <thead>
