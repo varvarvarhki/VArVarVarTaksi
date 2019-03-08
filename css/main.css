@@ -112,7 +112,7 @@ h1{
 }
 
 input{
-    font-size: 2em;
+    font-size: 1.5em;
     width: 18em;
     height: 1.5em;
     margin-left: 1em;
@@ -136,7 +136,7 @@ input:focus{
 }
 
 button{
-    font-size: 2em;
+    font-size: 1em;
     display: block;
     margin: 1em calc(50% - 4em) 1em calc(50% - 4em);
     border-radius: 2px;
@@ -144,8 +144,6 @@ button{
     height: 2em;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 1em;
-    margin-top: 1em;
     width: 10em;
     height: 1.5em;
     background-color: green;
@@ -169,7 +167,7 @@ button:focus{
     display: inline-block;
     margin-right: 10%;
    /* margin: 1em calc(50% - 15em ) 1em calc(50% - 15em );'*/
-    width: 100em;
+    width: 60em;
     height:60em;
     float: right;
 }
@@ -183,8 +181,6 @@ button:focus{
     float: left;
     display: inline-block;
     border-spacing: 0;
-    width: 50em;
-    height: 70em;
     margin: 0; /* calc(50% - 15em) 1em calc(50% - 15em);*/
     display: none;
     margin-right: auto;
