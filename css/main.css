@@ -155,7 +155,8 @@ button:hover{
     display: inline-block;
     margin-right: 10%;
    /* margin: 1em calc(50% - 15em ) 1em calc(50% - 15em );'*/
-    width: 60em;
+    width: 40%;
+
     height:60em;
     float: right;
 }
@@ -166,11 +167,13 @@ button:hover{
     text-align: center;
 }
 #hinnasto{
-    float: left;
+
     display: inline-block;
     border-spacing: 0;
     margin: 0; /* calc(50% - 15em) 1em calc(50% - 15em);*/
     display: none;
+    width: 80%;
+    height: 60em;
     margin-right: auto;
     margin-left: auto;
     font-size: 1em;
@@ -192,7 +195,11 @@ thead {
     margin: 1em;
 }
 #hinnat {
+    float: left;
     margin-left: 10%;
+    margin-right: 0;
+    width: 40%;
+    height: 60em;
 }
 
 
@@ -303,10 +310,8 @@ thead {
     main {
         margin-left: auto;
         margin-right: auto;
-        min-height:13em;
         width: 100%;
         font-size: 1em;
-        min-height: 35em;
     }
     footer {
         width: 100%;
@@ -320,17 +325,19 @@ thead {
         display: block;
         margin-left:  0;
         padding: 1em;
-        width: 20em;
-        height: 35em;
+        width: 22em;
+        height: 28em;
     }
     #hinnasto{
         width: 18em;
-        height: 35em;
+        height: 28em;
         display: none;
         margin:0;
     }
     #hinnat {
+        float: none;
         margin-left: 0;
+        height: auto;
     }
     input {
         width: 15em;
