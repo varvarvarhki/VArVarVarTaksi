@@ -99,18 +99,17 @@ textarea {
 header{
     width: 100%;
     text-align: center;
-    background-color: lightgreen;
-    border-bottom: 0.2em green solid;
+    background-color: rgb(255,255,255)
 
 }
 h1{
     margin: 0;
     padding: 1em;
     vertical-align: center;
-    font-size: 4em;
+    font-size: 1em;
 }
 input{
-    font-size: 1.5em;
+    font-size: 1em;
     width: 18em;
     height: 1.5em;
     margin-left: 1em;
@@ -137,8 +136,9 @@ button{
     display: block;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: auto;
     width: 10em;
-    height: 1.5em;
+    height: 2.5em;
     background-color: green;
     border-radius:1em ;
 
@@ -180,8 +180,12 @@ button:hover{
 
 }
 td {
+    font-size: 1.2em;
     border-bottom: 1px solid #333;
-    padding: 1em;
+    padding-right: 0.3em;
+    padding-left: 0.3em;
+    padding-bottom: 0.1em;
+    padding-top: 0.1em;
     text-align: center;
 }
 
@@ -192,19 +196,21 @@ thead {
 }
 #info {
     text-align: center;
-    margin: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 #hinnat {
     float: left;
     margin-left: 10%;
     margin-right: 0;
     width: 40%;
-    height: 60em;
+    height: 48em;
 }
 
-
-
-
+img {
+    width: 100%;
+    height: auto;
+}
 
 
 
@@ -298,14 +304,14 @@ thead {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (max-width:  60em) {
+@media only screen and (max-width:  35em) {
     body {
         margin: 0;
     }
     header {
-        font-size: 0.5em;
+        font-size: 1em;
         width: 100%;
-        margin: auto;
+        margin: 0;
     }
     main {
         margin-left: auto;
@@ -323,7 +329,7 @@ thead {
 
     #map{
         display: block;
-        margin-left:  0;
+        margin-left:  auto;
         padding: 1em;
         width: 22em;
         height: 28em;
@@ -336,10 +342,12 @@ thead {
     }
     #hinnat {
         float: none;
-        margin-left: 0;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
         height: auto;
     }
     input {
+        display: block;
         width: 15em;
         height: 3em;
         margin-right: auto;
@@ -357,7 +365,13 @@ thead {
         width: px;
 
     }
-
+    figure {
+        margin: 1em auto;
+        margin-top: 0;
+    }
+    td {
+        font-size: 1em;
+    }
 
 
 }
