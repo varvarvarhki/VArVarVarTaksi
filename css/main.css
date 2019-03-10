@@ -96,23 +96,20 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
 header{
     width: 100%;
     text-align: center;
-    background-color: lightgreen;
-    border-bottom: 0.2em green solid;
+    background-color: rgb(255,255,255)
 
 }
 h1{
     margin: 0;
     padding: 1em;
     vertical-align: center;
-    font-size: 4em;
+    font-size: 1em;
 }
-
 input{
-    font-size: 1.5em;
+    font-size: 1em;
     width: 18em;
     height: 1.5em;
     margin-left: 1em;
@@ -134,18 +131,14 @@ input:focus{
     text-align: center;
 
 }
-
 button{
     font-size: 1em;
     display: block;
-    margin: 1em calc(50% - 4em) 1em calc(50% - 4em);
-    border-radius: 2px;
-    width: 8em;
-    height: 2em;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: auto;
     width: 10em;
-    height: 1.5em;
+    height: 2.5em;
     background-color: green;
     border-radius:1em ;
 
@@ -155,19 +148,15 @@ button:focus{
     outline: black;
     border-radius: 1em;
 }
-#nappi:hover{
+button:hover{
     background-color: lightgreen;
 }
 #map{
-    width: 30em;
-    margin: auto;
-    display: block;
-    height: 30em;
-
     display: inline-block;
     margin-right: 10%;
    /* margin: 1em calc(50% - 15em ) 1em calc(50% - 15em );'*/
-    width: 60em;
+    width: 40%;
+
     height:60em;
     float: right;
 }
@@ -178,19 +167,25 @@ button:focus{
     text-align: center;
 }
 #hinnasto{
-    float: left;
+
     display: inline-block;
     border-spacing: 0;
     margin: 0; /* calc(50% - 15em) 1em calc(50% - 15em);*/
     display: none;
+    width: 80%;
+    height: 60em;
     margin-right: auto;
     margin-left: auto;
     font-size: 1em;
 
 }
 td {
+    font-size: 1.2em;
     border-bottom: 1px solid #333;
-    padding: 1em;
+    padding-right: 0.3em;
+    padding-left: 0.3em;
+    padding-bottom: 0.1em;
+    padding-top: 0.1em;
     text-align: center;
 }
 
@@ -201,15 +196,21 @@ thead {
 }
 #info {
     text-align: center;
-    margin: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 #hinnat {
+    float: left;
     margin-left: 10%;
+    margin-right: 0;
+    width: 40%;
+    height: 48em;
 }
 
-
-
-
+img {
+    width: 100%;
+    height: auto;
+}
 
 
 
@@ -303,8 +304,75 @@ thead {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+@media only screen and (max-width:  35em) {
+    body {
+        margin: 0;
+    }
+    header {
+        font-size: 1em;
+        width: 100%;
+        margin: 0;
+    }
+    main {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        font-size: 1em;
+    }
+    footer {
+        width: 100%;
+        font-size: 0.5em;'
+    }
+    div{
+        margin: auto;
+    }
+
+    #map{
+        display: block;
+        margin-left:  auto;
+        padding: 1em;
+        width: 22em;
+        height: 28em;
+    }
+    #hinnasto{
+        width: 18em;
+        height: 28em;
+        display: none;
+        margin:0;
+    }
+    #hinnat {
+        float: none;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        height: auto;
+    }
+    input {
+        display: block;
+        width: 15em;
+        height: 3em;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        font-size: 1em;
+
+    }
+    button{
+        font-size: 1em;
+        background-color: green;
+        border-radius:1em ;
+        height: 3em;
+        width: px;
+
+    }
+    figure {
+        margin: 1em auto;
+        margin-top: 0;
+    }
+    td {
+        font-size: 1em;
+    }
+
 
 }
 
