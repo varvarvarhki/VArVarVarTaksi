@@ -99,8 +99,13 @@ textarea {
 header{
     width: 100%;
     text-align: center;
-    background-color: rgb(255,255,255)
+    background-color: #d4bd9e;
 
+}
+img{
+    max-width: 30em;
+    display: block;
+    margin: auto;
 }
 h1{
     margin: 0;
@@ -112,11 +117,7 @@ input{
     font-size: 1em;
     width: 18em;
     height: 1.5em;
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-left: 1em;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin: 2em 1em 0 1em;
     border-radius: 0.5em;
     padding-left: 0.5em;
     padding-right: 1em;
@@ -131,25 +132,23 @@ input:focus{
     text-align: center;
 
 }
-button{
+#nappi{
     font-size: 1em;
     display: block;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: auto;
+    margin: 2em auto auto auto;
     width: 10em;
     height: 2.5em;
-    background-color: green;
+    background-color: #487b74;
     border-radius:1em ;
 
 
 }
-button:focus{
+#nappi:focus{
     outline: black;
     border-radius: 1em;
 }
-button:hover{
-    background-color: lightgreen;
+#nappi:hover{
+    background-color: #71a49d;
 }
 #map{
     display: inline-block;
@@ -167,10 +166,9 @@ button:hover{
     text-align: center;
 }
 #hinnasto{
-
-    display: inline-block;
+    float: left;
     border-spacing: 0;
-    margin: 0; /* calc(50% - 15em) 1em calc(50% - 15em);*/
+     /* calc(50% - 15em) 1em calc(50% - 15em);*/
     display: none;
     width: 80%;
     height: 60em;
@@ -182,16 +180,13 @@ button:hover{
 td {
     font-size: 1.2em;
     border-bottom: 1px solid #333;
-    padding-right: 0.3em;
-    padding-left: 0.3em;
-    padding-bottom: 0.1em;
-    padding-top: 0.1em;
+    padding: 0.1em 0.3em 0.1em 0.3em;
     text-align: center;
 }
 
 thead {
     height: 100%;
-    background-color: green;
+    background-color: #b7606a;
     color: white;
 }
 #info {
@@ -211,6 +206,29 @@ img {
     width: 100%;
     height: auto;
 }
+.ap-nostyle-dropdown-menu {
+    box-shadow: none;
+    border: 1px solid #dadada;
+    border-radius: 0;
+    background: #fff;
+    width: 100%;
+}
+
+.ap-nostyle-input-icon {
+    display: block;
+    position: absolute;
+    background: none;
+    border: none;
+}
+.algolia-places-nostyle { }
+.ap-nostyle-icon-pin { display: none;}
+.ap-nostyle-icon-clear { right: 1em; top: 2em}
+input:hover { border-color: silver; }
+input::placeholder { color: #aaaaaa; }
+.ap-nostyle-suggestion { border-bottom: 1px solid #efefef; }
+
+
+
 
 
 
@@ -350,19 +368,16 @@ img {
         display: block;
         width: 15em;
         height: 3em;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 1em;
-        margin-bottom: 1em;
+        margin: 1em auto 1em auto;
         font-size: 1em;
 
     }
     button{
         font-size: 1em;
         background-color: green;
-        border-radius:1em ;
+        border-radius: 1em;
         height: 3em;
-        width: px;
+
 
     }
     figure {

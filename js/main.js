@@ -18,8 +18,8 @@ function  changeAddress() {
 
     let searchadd = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&text=";
     let searchadd2 = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62488bdc9c76f18d4844942745fee4a44696&text=";
-    let address1 = document.getElementById("lahtoinput").value;
-    let address2 = document.getElementById("saapumineninput").value;
+    let address1 = document.getElementById("lahto").value;
+    let address2 = document.getElementById("saapuminen").value;
     address1 = address1.replace(/\s/g, "%20");
     address2 = address2.replace(/\s/g, "%20");
     searchadd += address1 + "&boundary.country=FI";
@@ -38,7 +38,7 @@ function  changeAddress() {
                 coordinates[0] = null;
             }
             linestring  = []
-            document.getElementById("lahtoinput").value = null;
+            document.getElementById("lahto").value = null;
             let p = document.createElement("p");
             p.innerText= "Lähtöosoitetta ei löytynyt";
             document.getElementById("lahtoerror").appendChild(p);
@@ -296,9 +296,7 @@ function getDistance() {
 function getDuration() {
     return duration;
 }
-const day = new Date();
-const paiva = day.getDay();
-const tunti = day.getHours();
+
 
 function menevaHinta(matka,aika){
     let hinta = 3.00;
@@ -388,7 +386,7 @@ function retroTaksiHinta(matka){
     var placesAutocomplete = places({
         appId: 'plG4UGHQVISH',
         apiKey: '0b96a80abd2ecc48f79aa96c67f521b9',
-        container: document.querySelector('#lahto input'),
+        container: document.querySelector('#lahto'),
         style: false,
         debug: true
     });
@@ -397,7 +395,7 @@ function retroTaksiHinta(matka){
     var placesAutocomplete = places({
         appId: 'plG4UGHQVISH',
         apiKey: '0b96a80abd2ecc48f79aa96c67f521b9',
-        container: document.querySelector('#saapuminen input'),
+        container: document.querySelector('#saapuminen'),
         style: false,
         debug: true
     });

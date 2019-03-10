@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 
-
+    <link href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin-ext" rel="stylesheet">
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js"></script>
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css" rel="stylesheet" />
 
@@ -21,23 +21,19 @@
 
 </head>
 <body class = "container">
-<header> <figure><img src = "img/logo.png"/></figure>
+<header><img src="logo.png">
 
 </header>
 
 <main>
 
     <section id = "haku">
-        <div id="lahto"><input type="search" id="lahtoinput" placeholder="mistä?"></div>
-        <div id="saapuminen"><input type="search" id="saapumineninput"  placeholder="mihin?"></div>
-
+        <input type="search" id="lahto" placeholder="mistä?">
+        <input type="search" id="saapuminen"  placeholder="mihin?">
         <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
-        <script>
-
-        </script>
-
-        <button id="nappi">Hae</button>
+           <button id="nappi">Hae</button>
     </section>
+
     <section>
         <div id = "lahtoerror"></div>
         <div id = "saapuminenerror"></div>
