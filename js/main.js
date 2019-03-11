@@ -311,7 +311,7 @@ function menevaHinta(matka,aika){
 function taksiHelsinkiHinta(matka,aika){
     let hinta = 3.90;
     const day = new Date();
-    if(paiva<6&&(8<tunti&&day.getHours()<15)){
+    if(day.getDay()<6&&(8<day.getHours()&&day.getHours()<15)){
         hinta += (matka*0.99+0.79*aika);
 
     } else if ((day.getDay()===5&&day.getHours()===23)||(day.getDay()===6&&day.getHours()<7)||(day.getDay()===6&&day.getHours()===23)||(day.getDay()===1&&day.getHours()<7)||day.getDay()===7){
@@ -343,10 +343,10 @@ function lahitaksiHinta(matka,aika){
 }
 function kovanenHinta(matka,aika){
     let hinta = 3.90;
-
+    const day = new Date();
     if(day.getDay()<6&&(8<day.getHours()&&day.getHours()<15)){
         hinta += (matka*0.99+0.79*aika);
-    } else if ((paiva===5&&tunti===23)||(paiva===6&&tunti<7)||(paiva===6&&tunti===23)||(paiva===1&&tunti<7)||paiva===7){
+    } else if ((day.getDay()===5&&day.getHours()===23)||(day.getDay()===6&&day.getHours()<7)||(day.getDay()===6&&day.getHours()===23)||(day.getDay()===1&&day.getHours()<7)||day.getDay()===7){
         hinta += (matka*1.19+aika*0.99);
     } else{
         hinta += (matka*1.09+0.89*aika);
