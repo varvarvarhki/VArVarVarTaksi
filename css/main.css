@@ -408,6 +408,9 @@ input::placeholder { color: #aaaaaa; }
     td {
         font-size: 1em;
     }
+    #gif{
+        display: none;
+    }
 
 
 }
