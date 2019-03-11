@@ -84,6 +84,7 @@ function  changeAddress() {
     Promise.all([fetch1, fetch2]).then(function() {
         document.getElementById("map").style.display="block";
         hinnasto.style.display ='table';
+        info.style.display = "block";
         search();
     }).catch(function(error) {
         console.log(error);
