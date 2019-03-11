@@ -211,13 +211,17 @@ img {
     height: auto;
 }
 footer {
+    margin: 1em;
+    display: inline-block;
+    width: 100%;
     font-size: 1em;
     text-align: center;
+
 }
 #gif {
-    float: left;
 }
 #start {
+    width: 100%;
     display: block;
     text-align: center;
 }

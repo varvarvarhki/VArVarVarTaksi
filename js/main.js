@@ -85,6 +85,8 @@ function  changeAddress() {
         document.getElementById("map").style.display="block";
         hinnasto.style.display ='table';
         info.style.display = "block";
+        document.getElementById("start").style.display ="none";
+        document.getElementById("gif").style.display="none";
         search();
     }).catch(function(error) {
         console.log(error);
